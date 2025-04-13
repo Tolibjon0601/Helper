@@ -1,49 +1,88 @@
-const form = document.querySelector(".php-email-form");
+const form = document.querySelector("#contactForm");
+const loading = form.querySelector(".loading");
+const errorMessage = form.querySelector(".error-message");
+const sentMessage = form.querySelector(".sent-message");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const name = document.querySelector(".name").value;
-  const email = document.querySelector(".email").value;
-  const subject = document.querySelector(".subject").value;
-  const message = document.querySelector(".message").value;
+  const from_name = form.from_name.value.trim();
+  const from_email = form.from_email.value.trim();
+  const number = form.number.value.trim();
+  const message = form.message.value.trim();
 
-  const loading = document.querySelector(".loading");
-  const errorMessage = document.querySelector(".error-message");
-  const sentMessage = document.querySelector(".sent-message");
+  // Bo‘sh maydonlarni tekshirish
+  if (!from_name || !from_email || !number || !message) {
+    showError("Iltimos, barcha maydonlarni to‘ldiring.");
+    return;
+  }
 
-  // Ko‘rsatish
+  Toastify({
+    text: "Xabar muvaffaqiyatli yuborildi!",
+    duration: 3000,
+    close: true,
+    gravity: "top", // yoki "bottom"
+    position: "right", // yoki "left"
+    backgroundColor: "#28a745",
+  }).showToast();
+
+  // Email tekshiruvi
+  if (!isValidEmail(from_email)) {
+    showError("Email manzilingiz noto‘g‘ri formatda.");
+    return;
+  }
+
+  // Holatni ko‘rsatish
   loading.style.display = "block";
   errorMessage.style.display = "none";
   sentMessage.style.display = "none";
 
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "egamberdiyevtolibjon0601@gmail.com",
-    Password: "BF4D3BDC463A02794C57458A68FBE9E73599",
-    To: "egamberdiyevtolibjon0601@gmail.com",
-    From: "egamberdiyevtolibjon0601@gmail.com", // faqat tasdiqlangan manzil
-    Subject: subject,
-    Body: `
-      <strong>Ismi:</strong> ${name} <br/>
-      <strong>Email:</strong> ${email} <br/>
-      <strong>Xabar:</strong><br/>${message}
-    `
-  }).then(
-    response => {
+  // Email yuborish
+  emailjs
+    .send("service_rx26wwe", "template_4jy2uj8", {
+      from_name,
+      from_email,
+      number,
+      message,
+      to_name: "Test Admin",
+    })
+    .then(() => {
       loading.style.display = "none";
-      if (response === "OK") {
-        sentMessage.style.display = "block";
-        form.reset();
-      } else {
-        errorMessage.style.display = "block";
-        errorMessage.textContent = "Xatolik: " + response;
-      }
+      sentMessage.style.display = "block";
+      form.reset();
+    })
+    .catch((error) => {
+      console.error("EmailJS xatosi:", error);
+      loading.style.display = "none";
+      showError(
+        "Xabar yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko‘ring."
+      );
+    });
+});
+
+// Email formatini tekshirish
+function isValidEmail(email) {
+  const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return pattern.test(email);
+}
+
+// Xatolik ko‘rsatish funksiyasi
+function showError(text) {
+  errorMessage.innerText = text;
+  errorMessage.style.display = "block";
+  sentMessage.style.display = "none";
+  loading.style.display = "none";
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const phoneInput = document.querySelector("#phoneInput");
+  Inputmask({
+    mask: "+998 (99) 999-99-99",
+    placeholder: " +998(__) ___-__-__",
+    showMaskOnHover: false,
+    showMaskOnFocus: true,
+    prefix: "+998",
+    onBeforePaste: function (pastedValue, opts) {
+      return pastedValue.replace(/^(\+998)?/, "");
     },
-    error => {
-      loading.style.display = "none";
-      errorMessage.style.display = "block";
-      errorMessage.textContent = "Tarmoq xatosi: " + error;
-    }
-  );
+  }).mask(phoneInput);
 });

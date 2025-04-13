@@ -13,6 +13,8 @@
   <link href="assets/img/logo.svg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- toast -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -885,31 +887,53 @@
             </div>
 
           </div>
+   <!-- EmailJS kutubxonasi -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-          <div class="col-lg-6">
-            <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-                  <div class="col-md-6">
-                      <input type="text" name="name" class="form-control name" placeholder="Your Name" required="">
-                  </div>
-                  <div class="col-md-6">
-                      <input type="email" class="form-control email " name="email" placeholder="Your Email" required="">
-                  </div>
-                  <div class="col-12">
-                      <input type="text" class="form-control subject" name="subject" placeholder="Subject" required="">
-                  </div>
-                  <div class="col-12">
-                      <textarea class="form-control message" name="message" rows="6" placeholder="Message" required=""></textarea>
-                  </div>
-                  <div class="col-12 text-center">
-                      <div class="loading">Loading</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">Your message has been sent. Thank you!</div>
-                      <button type="submit">Send Message</button>
-                  </div>
-              </div>
-          </form>
-          </div><!-- End Contact Form -->
+<!-- EmailJS sozlash -->
+<script type="text/javascript">
+  (function () {
+    emailjs.init("ZrKt11SrUMJGxXflI"); // <-- bu yerga public key qo‘yasiz
+  })();
+</script>
+
+<!-- Kontakt formasi -->
+<div class="col-lg-6">
+  <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <input type="text" name="from_name" class="form-control" placeholder="Ism Familiya" required />
+      </div>
+      <div class="col-md-6">
+        <input
+        type="text"
+        name="number"
+        id="phoneInput"
+        class="form-control"
+        placeholder="+998(__) ___-__-__"
+        required
+        value="+998"
+      />
+
+
+      </div>
+      <div class="col-12">
+        <input type="email" name="from_email" class="form-control" placeholder=" Email " required />
+      </div>
+      <div class="col-12">
+        <textarea name="message" class="form-control" rows="6" placeholder="Xabar" required></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <!-- <div class="loading" style="display: none;">Loading...</div> -->
+        <div class="error-message" style="display: none;"></div>
+        <!-- <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div> -->
+        <button type="submit">Xabar Jo'natish</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
 
         </div>
 
@@ -1026,13 +1050,16 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+<!-- toast -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 
   <!-- smtp -->
   <script src="https://smtpjs.com/v3/smtp.js">
   </script>
   <script src="./assets/js/contact.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.min.js"></script>
+
 </body>
 
 </html>
