@@ -12,6 +12,7 @@
   <!-- Favicons -->
   <link href="assets/img/logo.svg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- toast -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -42,11 +43,11 @@
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container position-relative d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="index.html" class="">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo-text.svg"  class="">
+        <img src="assets/img/logo-text.svg"  class="header_logo">
         <!-- <h1 class="sitename">Scaffold</h1> -->
       </a>
 
@@ -105,7 +106,7 @@
             </div>
           </div>
           <div class="col-lg-5 order-1 order-lg-2 hero-img">
-            <img src="assets/img/png/Billboard_12x4_m_Mockup_3.png" class="img-fluid rounded-2" alt="">
+            <img src="assets/img/png/Billboard_12x4_m_Mockup_3.png" class=" rounded-2 hero_img" alt="" >
           </div>
         </div>
       </div>
@@ -500,11 +501,12 @@
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
           <div class="col-xl-9 text-center text-xl-start">
-            <h3>Call To Action</h3>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h3>Xizmatdan Foydalaning</h3>
+            <p>Bizning xizmatlarimizdan foydalanib, siz sifat va ishonchlilikka ega bo‘lasiz.
+              Imkoniyatni qo‘ldan boy bermang — hoziroq bog‘laning!</p>
           </div>
           <div class="col-xl-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
+            <a class="cta-btn align-middle" href="Tel:+998 95 197 18 44">Bog'lanish</a>
           </div>
         </div>
 
@@ -851,8 +853,7 @@
             <div class="row gy-4">
               <div class="col-md-6  ">
                 <div class="info-item " data-aos="fade" data-aos-delay="200">
-                  <i class="bi bi-geo-alt"></i>
-                  <h3>Toshkent shahri Yashnobod tumani</h3>
+                  <i class="fa-solid fa-location-dot fa-bounce"></i>                  <h3>Toshkent shahri Yashnobod tumani</h3>
                   <p>Ohangaron shoh ko'chasida joylashgan Toshkent metropolitening "Do'stlik-Qo'yliq" yer usti metro yo'nalishi, 67 ofis</p>
 
                   <p  >Mo'ljal: <span>Rohat krugi</span></p>
@@ -861,23 +862,22 @@
 
               <div class="col-md-6  ">
                 <div class="info-item" data-aos="fade" data-aos-delay="300">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Biz bilan bog'lanish</h3>
+<i class="fa-solid fa-phone fa-shake"></i>
+              <h3>Biz bilan bog'lanish</h3>
                   <p>+998 95 197 18 44</p>
                 </div>
               </div><!-- End Info Item -->
 
               <div class="col-md-6">
                 <div class="info-item" data-aos="fade" data-aos-delay="400">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Pochta Manzili</h3>
+                  <i class="fa-solid fa-envelope fa-beat-fade"></i>                  <h3>Pochta Manzili</h3>
                   <p>istiqbol_m@mail.ru</p>
                 </div>
               </div><!-- End Info Item -->
 
               <div class="col-md-6">
                 <div class="info-item" data-aos="fade" data-aos-delay="500">
-                  <i class="bi bi-clock"></i>
+                  <i class="fa-solid fa-clock fa-pulse"></i>
                   <h3>Open Hours</h3>
                   <p>Dushanba - Juma</p>
                   <p>9:00 - 18:00</p>
@@ -897,7 +897,6 @@
   })();
 </script>
 
-<!-- Kontakt formasi -->
 <div class="col-lg-6">
   <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
     <div class="row gy-4">
@@ -947,7 +946,7 @@
 
     <div class="footer-top">
       <div class="container">
-        <div class="row gy-4">
+        <div class="row gy-4 justify-content-around align-items-center">
           <div class="col-lg-4 col-md-6 footer-about">
             <a href="index.html" class="logo d-flex align-items-center me-auto">
               <!-- Uncomment the line below if you also wish to use an image logo -->
@@ -964,50 +963,20 @@
           </div>
 
           <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Foydali havolalar</h4>
+            <h4 class="">Foydali havolalar</h4>
             <ul>
-              <li><a href="#">Asosiy</a></li>
-              <li><a href="#about">Biz haqimizda</a></li>
-              <li><a href="#services">Xizmatlar</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#team">Bizning Jamoa</a></li>
-              <li><a href="#contact">Aloqa</a></li>
+              <li><i class="fa-solid fa-angles-right fa-beat-fade"></i><a href="#">Asosiy</a></li>
+              <li> <i class="fa-solid fa-angles-right fa-beat-fade"></i><a href="#about">Biz haqimizda</a></li>
+              <li><i class="fa-solid fa-angles-right fa-beat-fade"></i><a href="#services">Xizmatlar</a></li>
+              <li><i class="fa-solid fa-angles-right fa-beat-fade"></i><a href="#portfolio">Portfolio</a></li>
+              <li><i class="fa-solid fa-angles-right fa-beat-fade"></i><a href="#team">Bizning Jamoa</a></li>
+              <li><i class="fa-solid fa-angles-right fa-beat-fade"></i><a href="#contact">Aloqa</a></li>
 
             </ul>
           </div>
 
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
 
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Hic solutasetp</h4>
-            <ul>
-              <li><a href="#">Molestiae accusamus iure</a></li>
-              <li><a href="#">Excepturi dignissimos</a></li>
-              <li><a href="#">Suscipit distinctio</a></li>
-              <li><a href="#">Dilecta</a></li>
-              <li><a href="#">Sit quas consectetur</a></li>
-            </ul>
-          </div>
 
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Nobis illum</h4>
-            <ul>
-              <li><a href="#">Ipsam</a></li>
-              <li><a href="#">Laudantium dolorum</a></li>
-              <li><a href="#">Dinera</a></li>
-              <li><a href="#">Trodelas</a></li>
-              <li><a href="#">Flexo</a></li>
-            </ul>
-          </div>
 
         </div>
       </div>
@@ -1019,7 +988,7 @@
 
         <div class="d-flex flex-column align-items-center ">
           <div>
-            © Copyright <strong><span>HELPER</span></strong>. All Rights Reserved
+            © Copyright <strong><span>HELPER.UZ</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
 

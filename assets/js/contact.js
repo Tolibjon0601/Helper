@@ -26,18 +26,16 @@ form.addEventListener("submit", function (e) {
     backgroundColor: "#28a745",
   }).showToast();
 
-  // Email tekshiruvi
   if (!isValidEmail(from_email)) {
     showError("Email manzilingiz noto‘g‘ri formatda.");
     return;
   }
 
-  // Holatni ko‘rsatish
   loading.style.display = "block";
   errorMessage.style.display = "none";
   sentMessage.style.display = "none";
 
-  // Email yuborish
+
   emailjs
     .send("service_rx26wwe", "template_4jy2uj8", {
       from_name,

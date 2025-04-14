@@ -152,18 +152,13 @@ h6 {
 
 
 
-.header .logo img {
+ .header_logo {
 height: 96px;
 width: 96px;
   margin-right: 8px;
 }
 
-/* .header .logo h1 {
-  font-size: 30px;
-  margin: 0;
-  font-weight: 700;
-  color: var(--heading-color);
-} */
+
 
 .header .header-social-links {
   padding-left: 15px;
@@ -454,36 +449,30 @@ width: 96px;
   background-color: color-mix(in srgb, var(--background-color), white 5%);
   padding-top: 50px;
 }
-
+/*
 .footer .footer-about .logo {
   line-height: 1;
   margin-bottom: 25px;
-}
+} */
 
 .footer .footer-about .logo img {
-  max-height: 40px;
-  margin-right: 6px;
+  max-height: 100px;
+
 }
 
-.footer .footer-about .logo span {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
+
 
 .footer .footer-about p {
-  font-size: 14px;
+  font-size: 18px;
   font-family: var(--heading-font);
 }
 
 .footer h4 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   position: relative;
   padding-bottom: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
 }
 
 .footer h4::after {
@@ -509,7 +498,7 @@ width: 96px;
 
 .footer .footer-links ul i {
   padding-right: 2px;
-  font-size: 12px;
+  font-size: 20px;
   line-height: 0;
 }
 
@@ -517,6 +506,7 @@ width: 96px;
   padding: 10px 0;
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .footer .footer-links ul li:first-child {
@@ -527,6 +517,7 @@ width: 96px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   display: inline-block;
   line-height: 1;
+  font-size: 18px;
 }
 
 .footer .footer-links ul a:hover {
@@ -551,26 +542,8 @@ width: 96px;
   font-size: 13px;
 }
 
-.footer .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: color-mix(in srgb, var(--default-color), transparent 92%);
-  color: var(--accent-color);
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 4px;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
 
-.footer .social-links a:hover {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  text-decoration: none;
-}
+
 
 /*--------------------------------------------------------------
 # Preloader
@@ -748,7 +721,7 @@ section,
   width: 100%;
   min-height: 60vh;
   position: relative;
-  padding: 120px 0 60px 0;
+  padding: 60px 0 60px 0;
   display: flex;
   align-items: center;
 }
@@ -811,6 +784,14 @@ section,
   color: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
+
+.hero_img{
+  height: 500px;
+  width: 600px;
+  object-fit: cover;
+}
+
+
 @media (max-width: 640px) {
   .hero h1 {
     font-size: 28px;
@@ -826,6 +807,11 @@ section,
   .hero .btn-get-started,
   .hero .btn-watch-video {
     font-size: 13px;
+  }
+
+  .hero_img {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -1839,6 +1825,6 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+.fa-solid{
+  color: var(--accent-color);
 }
