@@ -82,9 +82,9 @@
   function sendLeadRequest(data, overlay) {
     getValidToken().then((token) => {
       const payload = {
-        client_id: 46978,
-        branch_id: 21,
-        owner_id: 16,
+        client_id: 462,
+        branch_id: 73,
+        owner_id: 58,
 
         delivery_addres: "",
 
@@ -178,6 +178,5 @@
   };
 })();
   document.addEventListener("DOMContentLoaded", function () {
-    // Sahifa yuklanganda 3 soniyadan keyin modal ochiladi
     LeadModal.init(3000);
   });
