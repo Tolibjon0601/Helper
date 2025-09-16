@@ -19,9 +19,7 @@
     const cancelBtn = document.getElementById("lmCancel");
     const submitBtn = document.getElementById("lmSubmit");
 
-    cancelBtn.addEventListener("click", () =>
-      overlay.classList.remove("open")
-    );
+    cancelBtn.addEventListener("click", () => overlay.classList.remove("open"));
 
     submitBtn.addEventListener("click", () => {
       const data = {
@@ -57,7 +55,8 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             email: "helper-sayt",
-            password: "12345"         }),
+            password: "12345",
+          }),
         })
           .then((res) => {
             if (!res.ok) throw new Error("Login xatosi");
@@ -82,13 +81,13 @@
   function sendLeadRequest(data, overlay) {
     getValidToken().then((token) => {
       const payload = {
-        client_id: 462,
+        client_id: 46978,
         branch_id: 73,
         owner_id: 58,
 
         delivery_addres: "",
 
-        comment: `FIO: ${data.fullName}\nTelefon: ${data.phone}\nIzoh: ${data.comment}`,
+        comment: `${data.fullName}\nTelefon: ${data.phone}\nIzoh: ${data.comment}`,
 
         location: "41.33942112744839, 69.27167081193654",
         date: new Date().toISOString().slice(0, 19).replace("T", " "),
@@ -109,10 +108,6 @@
         ],
       };
 
-
-
-
-
       fetch("https://api.asbd.uz/api/delivery/water/order/web", {
         method: "POST",
         headers: {
@@ -122,6 +117,7 @@
         body: JSON.stringify(payload),
       })
         .then((res) => {
+          console.log(res );
           if (!res.ok) throw new Error("Server xatosi");
           return res.json();
         })
@@ -147,7 +143,6 @@
         });
     });
   }
-
 
   window.LeadModal = {
     init: function (timeout = 3000) {
@@ -177,6 +172,6 @@
     },
   };
 })();
-  document.addEventListener("DOMContentLoaded", function () {
-    LeadModal.init(3000);
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  LeadModal.init(3000);
+});
